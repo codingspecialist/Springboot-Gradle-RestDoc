@@ -1,0 +1,15 @@
+ifndef::snippets[]
+:snippets: ./build/generated-snippets
+endif::[]
+
+= REST API
+:toc: left
+:toclevels: 2
+:source-highlighter: highlightjs
+
+=== 1. 회원가입
+===== Request Example
+include::{snippets}/post/api/user/http-request.adoc[]
+
+===== Response Example
+include::{snippets}/post/api/user/http-response.adoc[]
