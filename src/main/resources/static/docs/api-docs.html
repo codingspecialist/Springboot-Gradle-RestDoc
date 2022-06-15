@@ -463,20 +463,52 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h3 id="_1_회원가입">1. 회원가입</h3>
 <div class="sect4">
 <h5 id="_request_example">Request Example</h5>
-<div class="paragraph">
-<p>Unresolved directive in api-docs.adoc - include::./build/generated-snippets/user-api-controller-test/save_test/http-request.adoc[]</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">POST /api/user HTTP/1.1
+Content-Type: application/json;charset=UTF-8
+Content-Length: 97
+Host: localhost:8080
+
+{
+  "id" : null,
+  "username" : "ssar",
+  "password" : "1234",
+  "email" : "ssar@nate.com"
+}</code></pre>
+</div>
 </div>
 </div>
 <div class="sect4">
 <h5 id="_response_example">Response Example</h5>
-<div class="paragraph">
-<p>Unresolved directive in api-docs.adoc - include::./build/generated-snippets/user-api-controller-test/save_test/http-response.adoc[]</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">HTTP/1.1 201 Created
+Content-Type: application/json;charset=UTF-8
+Content-Length: 94
+
+{
+  "id" : 1,
+  "username" : "ssar",
+  "password" : "1234",
+  "email" : "ssar@nate.com"
+}</code></pre>
+</div>
 </div>
 </div>
 <div class="sect4">
 <h5 id="_curl">Curl</h5>
-<div class="paragraph">
-<p>Unresolved directive in api-docs.adoc - include::./build/generated-snippets/user-api-controller-test/save_test/curl-request.adoc[]</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/api/user' -i -X POST \
+    -H 'Content-Type: application/json;charset=UTF-8' \
+    -d '{
+  "id" : null,
+  "username" : "ssar",
+  "password" : "1234",
+  "email" : "ssar@nate.com"
+}'</code></pre>
+</div>
 </div>
 </div>
 </div>
@@ -484,14 +516,28 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h3 id="_2_회원정보">2. 회원정보</h3>
 <div class="sect4">
 <h5 id="_request_example_2">Request Example</h5>
-<div class="paragraph">
-<p>Unresolved directive in api-docs.adoc - include::./build/generated-snippets/user-api-controller-test/find-by-id_test/http-request.adoc[]</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">GET /api/user/1 HTTP/1.1
+Host: localhost:8080</code></pre>
+</div>
 </div>
 </div>
 <div class="sect4">
 <h5 id="_response_example_2">Response Example</h5>
-<div class="paragraph">
-<p>Unresolved directive in api-docs.adoc - include::./build/generated-snippets/user-api-controller-test/find-by-id_test/http-response.adoc[]</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">HTTP/1.1 200 OK
+Content-Type: application/json;charset=UTF-8
+Content-Length: 94
+
+{
+  "id" : 1,
+  "username" : "ssar",
+  "password" : "1234",
+  "email" : "ssar@nate.com"
+}</code></pre>
+</div>
 </div>
 </div>
 </div>
@@ -499,14 +545,33 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h3 id="_3_회원목록">3. 회원목록</h3>
 <div class="sect4">
 <h5 id="_request_example_3">Request Example</h5>
-<div class="paragraph">
-<p>Unresolved directive in api-docs.adoc - include::./build/generated-snippets/user-api-controller-test/find-all_test/http-request.adoc[]</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">GET /api/user/ HTTP/1.1
+Host: localhost:8080</code></pre>
+</div>
 </div>
 </div>
 <div class="sect4">
 <h5 id="_response_example_3">Response Example</h5>
-<div class="paragraph">
-<p>Unresolved directive in api-docs.adoc - include::./build/generated-snippets/user-api-controller-test/find-all_test/http-response.adoc[]</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">HTTP/1.1 200 OK
+Content-Type: application/json;charset=UTF-8
+Content-Length: 192
+
+[ {
+  "id" : 1,
+  "username" : "ssar",
+  "password" : "1234",
+  "email" : "ssar@nate.com"
+}, {
+  "id" : 2,
+  "username" : "cos",
+  "password" : "1234",
+  "email" : "cos@nate.com"
+} ]</code></pre>
+</div>
 </div>
 </div>
 </div>
@@ -516,7 +581,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="footer">
 <div id="footer-text">
 Version 0.0.1-SNAPSHOT<br>
-Last updated 2022-06-15 11:27:13 +0900
+Last updated 2022-06-15 11:40:29 +0900
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css">
