@@ -85,6 +85,7 @@ public class MyWithRestDoc {
 ```
 
 ## ControllerTest 파일 작성
+- 클래스 상단에 @AutoConfigureRestDocs(uriScheme = "http", uriHost = "localhost", uriPort = 8080) 어노테이션 추가
 - MyWithRestDoc 파일을 상속해서 사용
 - mockMvc와 document를 부모에게 물려받아서 사용
 - AbstractControllerTest 파일에서 adoc파일 생성 위치를 자동화함.
